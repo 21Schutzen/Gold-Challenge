@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Processing</title>
+</head>
+<body>
+    <h1>File Processing</h1>
+
+    <h2>Tweets and Cleaned Tweets</h2>
+    <table>
+        <tr>
+            <th>Original Tweet</th>
+            <th>Cleaned Tweet</th>
+        </tr>
+        {% for i in range(list_of_tweets|length) %}
+        <tr>
+            <td>{{ list_of_tweets[i] }}</td>
+            <td>{{ list_of_cleaned_tweet[i] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

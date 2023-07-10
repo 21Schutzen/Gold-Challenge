@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read Database</title>
+</head>
+<body>
+    <h1>Read Database</h1>
+    <form method="POST" action="/read-database">
+        <label for="inputIndex">Input Index:</label>
+        <input type="text" id="inputIndex" name="inputIndex"><br><br>
+        <label for="inputKeywords">Input Keywords:</label>
+        <input type="text" id="inputKeywords" name="inputKeywords"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if error_warning %}
+    <p>{{ error_warning }}</p>
+    {% endif %}
+
+    {% if index %}
+    <h2>Results for Index: {{ index }}</h2>
+    <p>Previous Text: {{ previous_text }}</p>
+    <p>Cleaned Text: {{ cleaned_text }}</p>
+    {% endif %}
+
+    {% if showed_keywords %}
+    <h2>Results for Keywords: {{ showed_keywords }}</h2>
+    {% if results %}
+    <table>
+        <tr>
+            <th>Previous Text</th>
+            <th>Cleaned Text</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No data found for the provided keywords.</p>
+    {% endif %}
+    {% endif %}
+</body>
+</html>
+

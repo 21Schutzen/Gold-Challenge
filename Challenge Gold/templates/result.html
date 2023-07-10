@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .data {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result</h1>
+
+    <div class="container">
+        <div class="data">
+            <h2>Uncleaned Data</h2>
+            <ul>
+                {% for data in unclean_data %}
+                    <li>{{ data }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="data">
+            <h2>Cleaned Data</h2>
+            <ul>
+                {% for data in clean_data %}
+                    <li>{{ data }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+
